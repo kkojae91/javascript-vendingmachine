@@ -856,6 +856,10 @@ var NavigatorComponent = /** @class */ (function () {
         this.routeURLVisit(window.location.pathname);
     }
     NavigatorComponent.prototype.routeURLVisit = function (pathname) {
+        if (window.location.pathname === '/') {
+            this.renderProductComponent();
+            window.history.pushState(null, null, '/javascript-vendingmachine');
+        }
         if (pathname === _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS) {
             this.renderCoinComponent();
             window.history.pushState(null, null, _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS);
