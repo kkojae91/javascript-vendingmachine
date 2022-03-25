@@ -853,6 +853,9 @@ var NavigatorComponent = /** @class */ (function () {
         (0,_dom__WEBPACK_IMPORTED_MODULE_6__.on)(this.$navProductButton, 'click', this.onClickNavProductButton);
         (0,_dom__WEBPACK_IMPORTED_MODULE_6__.on)(this.$navChargeButton, 'click', this.onClickNavChargeButton);
         (0,_dom__WEBPACK_IMPORTED_MODULE_6__.on)(window, 'popstate', this.onPopstateRoute);
+        if (window.location.pathname === '/') {
+            window.location.pathname = '/javascript-vendingmachine';
+        }
         this.routeURLVisit(window.location.pathname);
     }
     NavigatorComponent.prototype.routeURLVisit = function (pathname) {
