@@ -1121,8 +1121,8 @@ var COINS = {
     LIST: [10, 50, 100, 500]
 };
 var ROUTES = {
-    PRODUCTS: '/products',
-    COINS: '/coins'
+    PRODUCTS: '/javascript-vendingmachine/products',
+    COINS: '/javascript-vendingmachine/coins'
 };
 var SNACK_BAR_DELAY_TIME = 3000;
 
