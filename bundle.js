@@ -839,12 +839,12 @@ var NavigatorComponent = /** @class */ (function () {
         this.onClickNavProductButton = function (e) {
             e.preventDefault();
             _this.renderProductComponent();
-            window.history.pushState(null, null, _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS);
+            window.history.pushState({}, '', _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS);
         };
         this.onClickNavChargeButton = function (e) {
             e.preventDefault();
             _this.renderCoinComponent();
-            window.history.pushState(null, null, _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS);
+            window.history.pushState({}, '', _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS);
         };
         new _ProductManageComponent_ProductsStateComponent__WEBPACK_IMPORTED_MODULE_1__["default"](this.vendingMachineProductManager);
         new _ProductManageComponent_ProductInputComponent__WEBPACK_IMPORTED_MODULE_0__["default"](this.vendingMachineProductManager);
@@ -858,15 +858,15 @@ var NavigatorComponent = /** @class */ (function () {
     NavigatorComponent.prototype.routeURLVisit = function (pathname) {
         if (window.location.pathname === '/') {
             this.renderProductComponent();
-            window.history.pushState(null, null, '/javascript-vendingmachine');
+            window.history.pushState({}, '', '/javascript-vendingmachine');
         }
         if (pathname === _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS) {
             this.renderCoinComponent();
-            window.history.pushState(null, null, _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS);
+            window.history.pushState({}, '', _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS);
         }
         if (pathname === _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS) {
             this.renderProductComponent();
-            window.history.pushState(null, null, _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS);
+            window.history.pushState({}, '', _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS);
         }
     };
     NavigatorComponent.prototype.renderProductComponent = function () {
