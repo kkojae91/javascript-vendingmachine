@@ -863,13 +863,11 @@ var NavigatorComponent = /** @class */ (function () {
         console.log(window.location.pathname);
         if (pathname === _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS) {
             console.log(window.location.pathname);
-            window.history.pushState({}, '', _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS);
             this.renderCoinComponent();
             return;
         }
         if (pathname === '/' || pathname === _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS) {
             console.log(window.location.pathname);
-            window.history.pushState({}, '', _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS);
             this.renderProductComponent();
             return;
         }
