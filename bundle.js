@@ -829,15 +829,11 @@ var NavigatorComponent = /** @class */ (function () {
         this.vendingMachineCoinManager = new _VendingMachineCoinManager__WEBPACK_IMPORTED_MODULE_4__["default"]();
         this.onPopstateRoute = function () {
             if (window.location.pathname === _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS) {
-                window.history.pushState({}, '', _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS);
                 _this.renderCoinComponent();
-                return;
             }
             if (window.location.pathname === _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS ||
                 window.location.pathname === '/') {
-                window.history.pushState({}, '', _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS);
                 _this.renderProductComponent();
-                return;
             }
         };
         this.onClickNavProductButton = function (e) {
@@ -860,14 +856,18 @@ var NavigatorComponent = /** @class */ (function () {
         this.routeURLVisit(window.location.pathname);
     }
     NavigatorComponent.prototype.routeURLVisit = function (pathname) {
-        console.log(window.location.pathname);
+        if (window.location.pathname === '/') {
+            window.history.pushState({}, '', '/');
+            this.renderProductComponent();
+            return;
+        }
         if (pathname === _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS) {
-            console.log(window.location.pathname);
+            window.history.pushState({}, '', _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS);
             this.renderCoinComponent();
             return;
         }
-        if (pathname === '/' || pathname === _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS) {
-            console.log(window.location.pathname);
+        if (pathname === _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS) {
+            window.history.pushState({}, '', _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS);
             this.renderProductComponent();
             return;
         }
@@ -1128,8 +1128,8 @@ var COINS = {
     LIST: [10, 50, 100, 500]
 };
 var ROUTES = {
-    PRODUCTS: 'javascript-vendingmachine/products',
-    COINS: 'javascript-vendingmachine/coins'
+    PRODUCTS: '/javascript-vendingmachine/products',
+    COINS: '/javascript-vendingmachine/coins'
 };
 var SNACK_BAR_DELAY_TIME = 3000;
 
