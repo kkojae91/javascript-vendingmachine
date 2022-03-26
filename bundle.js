@@ -838,13 +838,13 @@ var NavigatorComponent = /** @class */ (function () {
         };
         this.onClickNavProductButton = function (e) {
             e.preventDefault();
-            _this.renderProductComponent();
             window.history.pushState({ pathname: _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS }, '', _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS);
+            _this.renderProductComponent();
         };
         this.onClickNavChargeButton = function (e) {
             e.preventDefault();
-            _this.renderCoinComponent();
             window.history.pushState({ pathname: _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS }, '', _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS);
+            _this.renderCoinComponent();
         };
         new _ProductManageComponent_ProductsStateComponent__WEBPACK_IMPORTED_MODULE_1__["default"](this.vendingMachineProductManager);
         new _ProductManageComponent_ProductInputComponent__WEBPACK_IMPORTED_MODULE_0__["default"](this.vendingMachineProductManager);
@@ -853,23 +853,24 @@ var NavigatorComponent = /** @class */ (function () {
         (0,_dom__WEBPACK_IMPORTED_MODULE_6__.on)(this.$navProductButton, 'click', this.onClickNavProductButton);
         (0,_dom__WEBPACK_IMPORTED_MODULE_6__.on)(this.$navChargeButton, 'click', this.onClickNavChargeButton);
         (0,_dom__WEBPACK_IMPORTED_MODULE_6__.on)(window, 'popstate', this.onPopstateRoute);
-        if (window.location.pathname === '/') {
-            window.location.pathname = '/javascript-vendingmachine';
-        }
+        // if (window.location.pathname === '/') {
+        //   window.location.pathname = '/javascript-vendingmachine';
+        // }
         this.routeURLVisit(window.location.pathname);
     }
     NavigatorComponent.prototype.routeURLVisit = function (pathname) {
         if (window.location.pathname === '/') {
+            window.location.pathname = '/javascript-vendingmachine';
             this.renderProductComponent();
             window.history.pushState({ pathname: '/javascript-vendingmachine' }, '', '/javascript-vendingmachine');
         }
         if (pathname === _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS) {
-            this.renderCoinComponent();
             window.history.pushState({ pathname: _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS }, '', _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.COINS);
+            this.renderCoinComponent();
         }
         if (pathname === _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS) {
-            this.renderProductComponent();
             window.history.pushState({ pathname: _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS }, '', _constants__WEBPACK_IMPORTED_MODULE_7__.ROUTES.PRODUCTS);
+            this.renderProductComponent();
         }
     };
     NavigatorComponent.prototype.renderProductComponent = function () {
