@@ -1130,8 +1130,8 @@ var COINS = {
     LIST: [10, 50, 100, 500]
 };
 var ROUTES = {
-    PRODUCTS: '/products',
-    COINS: '/coins'
+    PRODUCTS: 'javascript-vendingmachine/products',
+    COINS: 'javascript-vendingmachine/coins'
 };
 var SNACK_BAR_DELAY_TIME = 3000;
 
@@ -1393,9 +1393,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ts_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ts/app */ "./src/ts/app.ts");
 
 
-window.addEventListener('DOMContentLoaded', function () {
-    (0,_ts_app__WEBPACK_IMPORTED_MODULE_1__["default"])();
-});
+// window.addEventListener('DOMContentLoaded', () => {
+(0,_ts_app__WEBPACK_IMPORTED_MODULE_1__["default"])();
+// });
 
 })();
 
